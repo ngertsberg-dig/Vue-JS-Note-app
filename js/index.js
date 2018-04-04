@@ -4,7 +4,7 @@ $(".input-code-container").hide();
         data:{
           notes:[
             {title:"Title 1 sample title",message:`data:{
-            THIS IS A SAMPLE NOTE notes:[{title:"Title 1",message:"THIS IS A SAMPLE NOTE"}],
+            THIS IS A SAMPLE NOTE notes:[{title:"Title 1",message:""}
             showHome:true,
             showNote:false
           },THIS IS A SAMPLE NOTE`}

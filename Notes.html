@@ -23,9 +23,9 @@
       <div class = 'note-list'>
          <ul style = 'list-style:none;' class = 'col-NZ-12'>
            <li v-for = 'note in notes'>
-              <h2>{{note.title}}<h2>
+              <h2 contenteditable="true">{{note.title}}<h2>
                   <div class = 'delete-note' @click='deleteNote'><i class="fa fa-times-circle"></i></div>
-                    <p style = 'font-size:18px;' class = 'microlight'> {{note.message}}</p>
+                    <p style = 'font-size:18px;' class = 'microlight'contenteditable="true"> {{note.message}}</p>
                   <!-- SHOW MORE BUTTON DISABLED FOR NOW -->
                    <!-- <div class = 'show-more'>
                     <i class="fa fa-plus"></i>
