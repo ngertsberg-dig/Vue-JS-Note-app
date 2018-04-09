@@ -240,3 +240,61 @@ textarea {
 .delete-note:hover{
   cursor:pointer;
 }
+.save-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.save-button button {
+    border: none;
+    background: transparent;
+}
+
+.save-button i {
+    font-size: 30px;
+    border: 2px solid #b5f7ff;
+    padding: 5px 15px;
+    border-radius: 10px;
+    transition: all 2s ease;
+}
+
+.save-button button:hover i {
+    background-color: #293c41 !important;
+    transition: all 2s ease;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 100%;
+    border-top-left-radius: 0%;
+}
+div#save-notification {
+    border: 2px solid #b3f3fb;
+    border-radius: 10px;
+    width: 25%;
+    height: 15%;
+    position: absolute;
+    top: 85%;
+    left: 75%;
+}
+
+#save-notification i {
+    font-size: 50px;
+}
+
+.notification-logo {
+    width: 25%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid #b3f3fb;
+}
+
+.notification-text {
+    height: 100%;
+    width: 75%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

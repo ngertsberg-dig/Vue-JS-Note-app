@@ -1,14 +1,23 @@
+function countList(){
+  var listCounter = 0;
+  $(".note-list li").each(function(){
+  $(this).attr('id',listCounter);
+  listCounter++;
+  });
+}
+
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};
+
 $(".input-code-container").hide();
+$("#save-notification").hide();
       var app1 = new Vue({
         el:"#app",
         data:{
-          notes:[
-            {title:"Title 1 sample title",message:`data:{
-            THIS IS A SAMPLE NOTE notes:[{title:"Title 1",message:""}
-            showHome:true,
-            showNote:false
-          },THIS IS A SAMPLE NOTE`}
-        ],
+          notes:store.get('notes'),
           showHome:true,
           showNote:false
         },
@@ -32,14 +41,31 @@ $(".input-code-container").hide();
                 this.notes.push({title:$(".title-input").val(),message:$("textarea").val()});
                 $("textarea").val("");
                 $(".back-home i").click();
+
+                setTimeout(function(){
+                  countList();
+                },1);
               },
               clearInputTitle(){
                 $('.title-input').val('');
                 $('.title-input').css({'textAlign':'left','paddingLeft':'5px'})
               },
               deleteNote(e){
-                var noteClicked = e.target;
-                $(noteClicked).parent().parent().parent().remove();
+                  var toDelete = $(e.target).parent().parent().parent().attr('id');
+                  toDelete = parseInt(toDelete);
+                  app1.notes.remove(toDelete);
+              },
+              save(){
+                store.clear();
+                store.set('notes',app1.notes);
+                app1.notes = store.get('notes');
+                $("#save-notification").show();
+                $("#save-notification").fadeOut(1000);
               }
+            },
+            mounted:function(){
+                  countList();
+
             }
+
         })
