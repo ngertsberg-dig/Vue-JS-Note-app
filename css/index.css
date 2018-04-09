@@ -240,6 +240,19 @@ textarea {
 .delete-note:hover{
   cursor:pointer;
 }
+.copy-paste-note {
+    position: relative;
+}
+
+.copy-paste-note i {
+    position: absolute;
+    left: 96%;
+    top: 50px;
+}
+.copy-paste-note:hover{
+  cursor:pointer;
+}
+
 .save-button {
     margin-top: 20px;
     text-align: center;
@@ -297,4 +310,7 @@ div#save-notification {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.hidden-copy-code{
+    display:none;
 }
