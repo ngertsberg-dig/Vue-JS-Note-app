@@ -31,9 +31,16 @@ $("#save-notification").hide();
       var app1 = new Vue({
         el:"#app",
         data:{
-          notes:store.get('notes'),
+          notes:[],
+            // [store.get('notes')]
           showHome:true,
           showNote:false
+        },
+        created(){
+          if(store.get('notes') != undefined){
+            this.notes = store.get('notes');
+          }
+
         },
         methods:{
           togglePages(){
